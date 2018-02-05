@@ -21,6 +21,14 @@ export default class Tome {
     return this.articles;
   }
 
+  searchArticlesByTitle(title) {
+    if (!title) return this.articles;
+
+    return this.articles.filter(x =>
+      _.kebabCase(x.title).includes(_.kebabCase(title))
+    );
+  }
+
   createArticleLinks(articles) {
     articles = articles.map(article => {
       article.url = "/" + this.titleToUrl(article.title);

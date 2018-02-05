@@ -36,6 +36,15 @@ var Tome = function () {
       return this.articles;
     }
   }, {
+    key: "searchArticlesByTitle",
+    value: function searchArticlesByTitle(title) {
+      if (!title) return this.articles;
+
+      return this.articles.filter(function (x) {
+        return _.kebabCase(x.title).includes(_.kebabCase(title));
+      });
+    }
+  }, {
     key: "createArticleLinks",
     value: function createArticleLinks(articles) {
       var _this = this;
