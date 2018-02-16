@@ -9,6 +9,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 // import React, { Component } from "react";
+// var React = require("react");
+// var Component = React.component;
 // export default class Graph extends Component {
 var _ = require("lodash");
 
@@ -93,9 +95,29 @@ var Tome = function () {
         return _.kebabCase(x.title) === _.kebabCase(title);
       })[0];
     }
+
+    // Snippet
+    // Strip html tags and shorten by given length
+
+  }, {
+    key: "snippet",
+    value: function snippet(html, length) {
+      return html.replace(/(<([^>]+)>)/gi, "").substring(0, length).trim() + "...";
+    }
   }]);
 
   return Tome;
 }();
+
+// class Listing extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+
+//   render() {
+//     return <p>Listings by TomeTM</p>;
+//   }
+// }
+
 
 exports.default = Tome;

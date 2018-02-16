@@ -1,4 +1,6 @@
 // import React, { Component } from "react";
+// var React = require("react");
+// var Component = React.component;
 // export default class Graph extends Component {
 const _ = require("lodash");
 
@@ -70,4 +72,25 @@ export default class Tome {
       x => _.kebabCase(x.title) === _.kebabCase(title)
     )[0];
   }
+
+  // Snippet
+  // Strip html tags and shorten by given length
+  snippet(html, length) {
+    return (
+      html
+        .replace(/(<([^>]+)>)/gi, "")
+        .substring(0, length)
+        .trim() + "..."
+    );
+  }
 }
+
+// class Listing extends Component {
+//   constructor(props) {
+//     super(props);
+//   }
+
+//   render() {
+//     return <p>Listings by TomeTM</p>;
+//   }
+// }
