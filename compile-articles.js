@@ -78,6 +78,10 @@ const parseFilenames = files => {
   return files;
 };
 
+// const replacePublicUrl = string => {
+//   return string.replace(/%PUBLIC_URL%/g, "/public");
+// };
+
 // Take all the files and create a useful data structure
 const convertFilesToCompiles = files =>
   new Promise((resolve, reject) => {
@@ -103,6 +107,9 @@ const convertFilesToCompiles = files =>
         // Trim " quotes
         // content = content.substring(1, content.length - 1);
         // Update, maybe not necessary at all? It seems to automagic it
+
+        // content = replacePublicUrl(content);
+
         _.set(compiles, injectPath, content); // SO CLOSE but jaffs integers wrong
       }
     });
