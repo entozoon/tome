@@ -74,10 +74,11 @@ export default class Tome {
   }
 
   // Snippet
-  // Strip html tags and shorten by given length
+  // Strip html tags and shorten by given length, but leave a space between tags,or you missing spaces
   snippet(html, length) {
     return (
       html
+        .replace(/<\\/gi, " ")
         .replace(/(<([^>]+)>)/gi, "")
         .substring(0, length)
         .trim() + "..."

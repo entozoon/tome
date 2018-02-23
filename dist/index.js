@@ -97,12 +97,12 @@ var Tome = function () {
     }
 
     // Snippet
-    // Strip html tags and shorten by given length
+    // Strip html tags and shorten by given length, but leave a space between tags,or you missing spaces
 
   }, {
     key: "snippet",
     value: function snippet(html, length) {
-      return html.replace(/(<([^>]+)>)/gi, "").substring(0, length).trim() + "...";
+      return html.replace(/<\\/gi, " ").replace(/(<([^>]+)>)/gi, "").substring(0, length).trim() + "...";
     }
   }]);
 

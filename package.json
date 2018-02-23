@@ -1,6 +1,6 @@
 {
   "name": "tome-of-the-unknown",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React blog system that's lickety split",
   "main": "dist/index.js",
   "scripts": {
